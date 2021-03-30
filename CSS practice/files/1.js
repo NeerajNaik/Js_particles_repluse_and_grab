@@ -53,6 +53,7 @@ class Particle{
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx*dx + dy*dy);
         if(distance < mouse.radius + this.size){
+            //for grab uncomment the lines below and comment the this.x or this.y part
             if(mouse.x< this.x && this.x < canvas.width - this.size * 10){
                 this.x +=10;
                 // ctx.strokeStyle = "#8C5523";
