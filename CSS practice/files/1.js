@@ -30,12 +30,13 @@ class Particle{
         this.color=color;
 
     }
-
+//can uncomment for opacity(while drawing there will be less opacity)
     draw(){
         ctx.beginPath()
         ctx.arc(this.x,this.y,this.size,0,Math.PI * 2,false)
         ctx.fillStyle = '#8C5523';
-        ctx.fill()
+        ctx.fill();
+        //ctx.globalAlpha=0.3;
 
     }
 
@@ -54,8 +55,10 @@ class Particle{
         let distance = Math.sqrt(dx*dx + dy*dy);
         if(distance < mouse.radius + this.size){
             //for grab uncomment the lines below and comment the this.x or this.y part
+            //can uncomment ctx.globalApha for opacity else let it be commented
             if(mouse.x< this.x && this.x < canvas.width - this.size * 10){
                 this.x +=10;
+                //ctx.globalAlpha=1;
                 // ctx.strokeStyle = "#8C5523";
                 // ctx.beginPath();
                 // ctx.moveTo(mouse.x, mouse.y);
@@ -64,6 +67,7 @@ class Particle{
             }
             if(mouse.x > this.x && this.x > this.size * 10){
                 this.x -=10;
+                //ctx.globalAlpha=1;
                 // ctx.strokeStyle = "#8C5523";
                 // ctx.beginPath();
                 // ctx.moveTo(mouse.x, mouse.y);
@@ -72,6 +76,7 @@ class Particle{
             }
             if(mouse.y< this.x && this.y < canvas.height - this.size * 10){
                 this.y +=10;
+                //ctx.globalAlpha=1;
                 // ctx.strokeStyle = "#8C5523";
                 // ctx.beginPath();
                 // ctx.moveTo(mouse.x, mouse.y);
@@ -80,6 +85,7 @@ class Particle{
             }
             if(mouse.y > this.y && this.y > this.size * 10){
                 this.y -=10;
+                //ctx.globalAlpha=1;
                 // ctx.strokeStyle = "#8C5523";
                 // ctx.beginPath();
                 // ctx.moveTo(mouse.x, mouse.y);
